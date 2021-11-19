@@ -1,0 +1,54 @@
+#include "std_lib_facilities.h"
+
+void swap_v(int a, int b)
+{
+	int temp;
+	temp = a;
+	a = b;
+	b = temp;
+
+}
+
+void swap_r(int& a, int& b)
+{
+	int temp;
+	temp = a;
+	a = b;
+	b = temp;
+}
+
+//void swap_cr(const int& a, const int& b) // nem fut le mert értéket adunk egy read-only referenciához
+//{
+//	int temp;
+//	temp = a;
+//	a = b;
+//	b = temp;
+//}
+
+int main()
+{
+	int x = 7;
+	int y = 9;
+	//swap_v(x,y); // lefut de nem cserél semmit
+	swap_r(x,y);
+	//swap_v(7,9); // lefut de nem cserél semmit
+	//swap_r(7,9); // nem fut le
+	cout << "x értéke: " << x << " y értéke: " << y << '\n';
+	const int cx = 7;
+	const int cy = 9;
+	//swap_v(cx,cy); // nem cserél
+	//swap_r(cx,cy); // nem fut le
+	//swap_v(7.7,9.9); // nem csinál semmit
+	//swap_r(7.7,9.9); // nem fut le
+	cout << "cx értéke: " << cx << " cy értéke: " << cy << '\n';
+	double dx = 7.7;
+	double dy = 9.9;
+	//swap_v(dx,dy); // nem cserél
+	//swap_r(dx,dy); // nem fut le
+	//swap_v(7.7,9.9) // nem cserél
+	//swap_r(7.7,9.9) // nem fut le
+	cout << "dx értéke: " << dx << " dy értéke: " << dy << '\n';
+
+	return 0;
+}
+
