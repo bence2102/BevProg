@@ -78,12 +78,6 @@ try{
 	for(int i = 0; i<20; ++i)
 		v3.push_back(100+i);
 	print_vector(cout,v3);
-
-
-
-
-
-
 }
 catch (exception& e) {
     cerr << "exception: " << e.what() << endl;
